@@ -1,0 +1,221 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPR Medical Aid - Q&A</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 960px;
+    margin: auto;
+  }
+
+  header {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+    color: red;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #555;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 15px 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar-left a {
+    font-size: 20px;
+    color: red;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .navbar-right {
+    display: flex;
+    gap: 15px;
+  }
+
+  .navbar-right a {
+    color: white;
+    background-color: red;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-right a:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+  }
+
+  .qna-section, .quiz-section {
+    background: rgba(255, 255, 255, 0.95);
+    margin-top: 2rem;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+
+  .qna-section:hover, .quiz-section:hover {
+    transform: translateY(-3px);
+  }
+
+  .qna-section h2, .quiz-section h2 {
+    color: red;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .qna-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .qna-item h3 {
+    color: #b30000;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  .qna-item p {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .quiz-section p {
+    margin-bottom: 1rem;
+    color: #444;
+  }
+
+  .quiz-link {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 0.7rem 1.3rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .quiz-link:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+  }
+
+  footer {
+    background: #ffe6e6;
+    color: #444;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 2px solid #ccc;
+  }
+
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.7rem;
+    }
+
+    .qna-section h2, .quiz-section h2 {
+      font-size: 1.4rem;
+    }
+
+    .quiz-link {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="index.html">Home</a>
+    </div>
+    <div class="navbar-right">
+      <a href="aboutus.html">About Us</a>
+      <a href="aboutcpr.html">About CPR</a>
+      <a href="kahoot.html">Knowledge Test</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <h1>CPR Medical Aid</h1>
+      <p>Empowering you with CPR knowledge & care</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="qna-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="qna-item">
+        <h3>What is CPR?</h3>
+        <p>CPR, or Cardiopulmonary Resuscitation, is a vital technique that keeps blood and oxygen flowing when someone’s heart has stopped or they’ve stopped breathing. It’s a crucial skill that saves lives!</p>
+      </div>
+
+      <div class="qna-item">
+        <h3>When should CPR be performed?</h3>
+        <p>If you see someone who’s unresponsive and not breathing normally, or only gasping, start CPR right away. Every second counts!</p>
+      </div>
+
+      <div class="qna-item">
+        <h3>How can I learn CPR?</h3>
+        <p>Get trained through certified courses by organizations like the American Heart Association or the Red Cross. Or explore online resources and practice with an instructor—it’s easier than you think and can truly save lives.</p>
+      </div>
+    </section>
+
+    <section class="quiz-section">
+      <h2>Test Your CPR Knowledge</h2>
+      <p>Ready to put your knowledge to the test? Take our interactive quiz below and see how much you know!</p>
+      <a href="https://kahoot.it/challenge/?quiz-id=18478438-b793-4e90-841a-cdcf32bce148&single-player=true" target="_blank" class="quiz-link">Take the Kahoot Quiz</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 CPR Heroes | Be Prepared. Be a Hero. 🦸‍♂️</p>
+    </div>
+  </footer>
+</body>
+</html>

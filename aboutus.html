@@ -1,0 +1,345 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - CPR Heroes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: url('images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #1d3557;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #d62828;
+    }
+
+    .about-intro {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      margin: 40px auto 20px;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .about-intro img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .about-intro h2 {
+      color: #d62828;
+      margin-bottom: 10px;
+    }
+
+    .about-intro p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 480px;
+      perspective: 1000px;
+      margin: 20px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .flip-card-front {
+      background-color: #d62828;
+      color: white;
+      padding: 20px;
+    }
+
+    .flip-card-back {
+      background-color: #1d3557;
+      color: white;
+      transform: rotateY(180deg);
+      padding: 20px;
+    }
+
+    .flip-card img {
+      width: 100%;
+      height: 70%;
+      border-radius: 12px;
+    }
+
+    .flip-card h3 {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .flip-card p {
+      margin: 0 0 10px;
+      color: #1D3557;
+    }
+
+    .skills {
+      margin-top: 10px;
+    }
+
+    .skill {
+      margin-bottom: 10px;
+    }
+
+    .skill-name {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .bar {
+      height: 10px;
+      background: #adb5bd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: #e63946;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ddd;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-left a {
+      font-size: 20px;
+      color: red;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .navbar-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar-right a {
+      color: white;
+      background-color: red;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar-right a:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+	
+	footer {
+		background: #ffe6e6;
+		color: #444;
+		text-align: center;
+		padding: 1.5rem 1rem;
+		margin-top: 3rem;
+		font-size: 0.9rem;
+		border-top: 2px solid #ccc;
+	 }
+	 
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="index.html" tabindex="1">Home</a>
+    </div>
+    <div class="navbar-right">
+      <a href="aboutus.html" tabindex="2">About Us</a>
+      <a href="aboutcpr.html" tabindex="3">About CPR</a>
+      <a href="kahoot.html" tabindex="4">Knowledge Test</a>
+      <a href="faq.html" tabindex="5">FAQ</a>
+      <a href="contact.html" tabindex="6">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- CPR Heroes Company Intro Section -->
+  <div class="about-intro">
+    <img src="images/logo.png" alt="CPR Heroes Logo">
+    <h2>Know More About Us</h2>
+    <p><strong>CPR Heroes</strong> was founded with one powerful mission: to empower individuals to act in moments of crisis — whether it's a friend, a family member, or even a stranger.</p>
+    <p>We are passionate about making life-saving skills accessible to everyone. Through fun, engaging, and educational programs, we aim to equip our community with the confidence and knowledge to respond in emergencies.</p>
+    <p>Because every heartbeat matters — and anyone, anywhere, can be a hero.</p>
+  </div>
+
+  <h1>Meet the Team</h1>
+  <div class="team-section">
+
+    <!-- Member 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/image cpr/Myself.jpg" alt="Nurien Irdina" />
+          <h3>Nurien Irdina</h3>
+          <b><p>Project Coordinator</p></b>
+        </div>
+        <div class="flip-card-back">
+          <h3>Skills</h3>
+          <div class="skills">
+            <div class="skill"><div class="skill-name">Basic Life Support (BLS)</div><div class="bar"><div class="bar-fill" style="width:95%"></div></div></div>
+            <div class="skill"><div class="skill-name">Calm Under Pressure</div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="skill"><div class="skill-name">Empathy & Compassion</div><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/image cpr/isma.jpeg" alt="Isma" />
+          <h3>Nur Ismahani</h3>
+          <b><p>Safety Protocol Specialist</p></b>
+        </div>
+        <div class="flip-card-back">
+          <h3>Skills</h3>
+          <div class="skills">
+            <div class="skill"><div class="skill-name">First Aid Certification</div><div class="bar"><div class="bar-fill" style="width:95%"></div></div></div>
+            <div class="skill"><div class="skill-name">Bleeding Control</div><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+            <div class="skill"><div class="skill-name">Health & Safety Regulations</div><div class="bar"><div class="bar-fill" style="width:100%"></div></div></div>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!-- Member 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/image cpr/ruby.jpeg" alt="Ruby" />
+          <h3>Rabiatul Adaviyah</h3>
+          <b><p>Training Facilitator</p></b>
+        </div>
+        <div class="flip-card-back">
+          <h3>Skills</h3>
+          <div class="skills">
+            <div class="skill"><div class="skill-name">Chest Compression Technique</div><div class="bar"><div class="bar-fill" style="width:100%"></div></div></div>
+            <div class="skill"><div class="skill-name">Communication Skills</div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="skill"><div class="skill-name">CPR Training Instruction</div><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 4 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/image cpr/ainasofia.jpg" alt="Aina" />
+          <h3>Aina Sofea</h3>
+          <b><p>Rescue Operation Planner</p></b>
+        </div>
+        <div class="flip-card-back">
+          <h3>Skills</h3>
+          <div class="skills">
+            <div class="skill"><div class="skill-name">Scene Safety & Risk Assessment</div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="skill"><div class="skill-name">Decision Making</div><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+            <div class="skill"><div class="skill-name">Airway Management</div><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 5 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/image cpr/tasya.jpeg" alt="Tasya" />
+          <h3>Natasya Amira</h3>
+          <b><p>Emergency Tech & Media Coordinator</p></b>
+        </div>
+        <div class="flip-card-back">
+          <h3>Skills</h3>
+          <div class="skills">
+            <div class="skill"><div class="skill-name">AED Operation (Automated External Defibrillator)</div><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+            <div class="skill"><div class="skill-name">Quick Reaction Time</div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="skill"><div class="skill-name">CPR Protocols (Adult, Child, Infant)Social Media</div><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 6 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/image cpr/faiq.jpeg" alt="Faiq" />
+          <h3>Faiq Farhan</h3>
+          <b><p>Medical Operations Strategist</p></b>
+        </div>
+        <div class="flip-card-back">
+          <h3>Skills</h3>
+          <div class="skills">
+            <div class="skill"><div class="skill-name">Leadership in Crisis</div><div class="bar"><div class="bar-fill" style="width:95%"></div></div></div>
+            <div class="skill"><div class="skill-name">Triage Knowledge</div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="skill"><div class="skill-name">Team Coordination</div><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <footer>
+    <div class="container">
+      <p>&copy; 2025 CPR Heroes | Be Prepared. Be a Hero. 🦸‍♂️</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

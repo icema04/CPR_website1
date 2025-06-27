@@ -1,0 +1,564 @@
+<head>
+  <meta charset="UTF-8" />
+  <title>CPR Heroes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: url('images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      scroll-behavior: smooth;
+    }
+
+    /* Popup Overlay */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Popup Box */
+    .popup-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: fadeInPopup 0.8s ease;
+    }
+
+    .popup-content h2 {
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    .popup-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .popup-content button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .popup-content button:hover {
+      background-color: darkred;
+    }
+
+    @keyframes fadeInPopup {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ddd;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-left a {
+      font-size: 20px;
+      color: red;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .navbar-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    /* All navbar and call-to-action links styled like buttons (no underline/color) */
+    .navbar-right a,
+    .learn-more,
+    .quiz-button,
+    .cta-card a {
+      color: white;
+      background-color: red;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar-right a:hover,
+    .learn-more:hover,
+    .quiz-button:hover,
+    .cta-card a:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .left h2 {
+      color: red;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .left p {
+      margin-bottom: 16px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    /* Learn more button uses same styling as navbar links */
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      animation: pulse 3s infinite;
+    }
+
+    .right img {
+      width: 100%;
+      border-radius: 10px;
+      max-height: 350px;
+      object-fit: cover;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.01);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .navbar-right {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    /* Quiz Section */
+    .quiz-preview {
+      text-align: center;
+      background-color: #fff6f6;
+      padding: 50px 20px;
+    }
+
+    .quiz-preview h2 {
+      color: red;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .quiz-preview p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .quiz-button {
+      background-color: red;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, background-color 0.3s;
+      display: inline-block;
+    }
+
+    .quiz-button:hover {
+      transform: scale(1.1);
+      background-color: #cc0000;
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Steps Section */
+    .steps-section {
+      padding: 50px 20px;
+      background-color: #fdf5e6;
+      text-align: center;
+    }
+
+    .steps-section h2 {
+      color: red;
+      margin-bottom: 30px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .step-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex: 1 1 200px;
+      transition: transform 0.3s ease;
+      font-weight: 600;
+      color: #333;
+      cursor: default;
+    }
+
+    .step-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Call-to-Action Section */
+    .cta-section {
+      background-color: #ffe6e6;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      color: #b30000;
+      margin-bottom: 30px;
+    }
+
+    .cta-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-card {
+      background-color: white;
+      padding: 25px 30px;
+      border-radius: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
+      /* Make whole card clickable by setting link to block */
+    }
+
+    .cta-card:hover {
+      transform: scale(1.05);
+      background-color: #ffcccc;
+    }
+
+    /* Call-to-Action Section */
+	.cta-card a {
+	  display: block;
+	  color: #333; /* Dark text */
+	  background-color: #f0f0f0; /* Light gray background */
+	  padding: 12px 20px;
+	  border-radius: 8px;
+	  font-weight: 600;
+	  text-decoration: none;
+	  transition: background-color 0.3s ease, color 0.3s ease;
+	  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+	}
+
+	.cta-card a:hover {
+	  background-color: #dcdcdc;
+	  color: #000;
+	  text-decoration: none;
+	}
+	
+    /* Footer Styling */
+    .footer {
+      background: linear-gradient(to right, #fdf5e6, #ffe6e6);
+      padding: 40px 20px;
+      text-align: center;
+      animation: slideUp 1.5s ease-in-out;
+      margin-top: 40px;
+      border-top: 2px solid #ddd;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .footer-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .fun-facts {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 20px;
+      max-width: 700px;
+      text-align: left;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .fun-facts li {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #444;
+      position: relative;
+      padding-left: 28px;
+      line-height: 1.6;
+    }
+
+    .footer-bottom {
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Confetti animation for fun */
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      opacity: 0.7;
+      border-radius: 50%;
+      animation: confettiFall 3s linear infinite;
+      z-index: 10000;
+      pointer-events: none;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+		<body>
+
+		  <div id="welcomePopup" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeDesc">
+			<div class="popup-content">
+			  <h2 id="welcomeTitle">👋 Welcome to CPR Heroes!</h2>
+			  <p id="welcomeDesc">Where you'll become a lifesaver in emergency situations.</p>
+			  <button onclick="closePopup()" aria-label="Close welcome popup">Join</button>
+			</div>
+		  </div>
+
+		  <div class="navbar">
+			<div class="navbar-left">
+			  <a href="index.html" tabindex="1">Home</a></div>
+			<div class="navbar-right">
+			  <a href="aboutus.html" tabindex="2">About Us</a>
+			  <a href="aboutcpr.html" tabindex="3">About CPR</a>
+			  <a href="kahoot.html" tabindex="4">Knowledge Test</a>
+			  <a href="faq.html" tabindex="5">FAQ</a>
+			  <a href="contact.html" tabindex="6">Contact Us</a>
+			</div>
+		  </div>
+
+		  <div class="container">
+			<div class="left">
+			  <h2>YOUR LIFE-SAVING JOURNEY STARTS HERE</h2>
+			  <p>Emergencies can happen anytime, anywhere — at home, at work, or in public. Knowing how to respond can make all the difference.</p>
+			  <p>Our fun, engaging CPR courses will guide you step-by-step to help you stay calm, act fast, and possibly save a life. You'll feel confident, prepared, and empowered.</p>
+			  <p>🎓 Join us in building a safer and more prepared community today!</p>
+			  <a href="aboutcpr.html" class="learn-more" tabindex="7">👉 Learn More</a>
+			</div>
+
+			<div class="right" aria-label="CPR demonstration image">
+			  <img src="images/cpr.jpeg" alt="CPR Image" />
+			</div>
+		  </div>
+
+		  <!-- Mini Quiz Section -->
+		  <section class="quiz-preview" aria-labelledby="quizTitle" aria-describedby="quizDesc">
+			<h2 id="quizTitle">🧠 Quick CPR Challenge!</h2>
+			<p id="quizDesc">Think you know what to do during an emergency? Test your CPR skills in just 1 minute.</p>
+			<a href="https://wayground.com/admin/quiz/685bf7ba8655bf0b5b245597" class="quiz-button" tabindex="8" aria-label="Start CPR quiz">Start Quiz</a>
+		  </section>
+
+		  <!-- 4-Step CPR Steps Section -->
+		  <section class="steps-section" aria-label="CPR Steps Section">
+			<h2>Follow These 4 Simple Steps</h2>
+			<div class="steps">
+			  <div class="step-card" tabindex="9" aria-label="Step 1: Check the Scene and Victim">
+				1. Check the scene and victim
+			  </div>
+			  <div class="step-card" tabindex="10" aria-label="Step 2: Call for Help">
+				2. Call for help
+			  </div>
+			  <div class="step-card" tabindex="11" aria-label="Step 3: Give Chest Compressions">
+				3. Give chest compressions
+			  </div>
+			  <div class="step-card" tabindex="12" aria-label="Step 4: Open Airway and Rescue Breathing">
+				4. Open airway and rescue breathing
+			  </div>
+			</div>
+		  </section>
+
+		  <section class="cta-section" aria-label="Get Involved Section">
+			  <h2>Take Action Today!</h2>
+			  <div class="cta-cards">
+				<div class="cta-card" tabindex="13" role="button" aria-pressed="false">
+				  <a href="https://wa.link/xkeqvx" aria-label="Register for CPR Class">📅 Register for CPR Class</a>
+				</div>
+				<div class="cta-card" tabindex="14" role="button" aria-pressed="false">
+				  <a href="https://wa.link/grq22p" aria-label="Become a Volunteer">🤝 Become a Volunteer</a>
+				</div>
+				<div class="cta-card" tabindex="15" role="button" aria-pressed="false">
+				  <a href="https://wa.link/yvl0dk" aria-label="Donate to Save Lives">💖 Donate to Save Lives</a>
+				</div>
+			  </div>
+			</section>
+
+		  <!-- Footer Section -->
+		  <footer class="footer" aria-label="Footer">
+			<div class="footer-title">Fun Facts About CPR</div>
+			<ul class="fun-facts">
+			  <li>CPR stands for Cardiopulmonary Resuscitation.</li>
+			  <li>It was first developed in the 1960s and saves thousands of lives every year.</li>
+			  <li>Immediate CPR can double or triple survival chances after cardiac arrest.</li>
+			  <li>Hands-only CPR is a simple technique anyone can learn.</li>
+			  <li>Learning CPR builds confidence and helps you react calmly in emergencies.</li>
+			</ul>
+			<div class="footer-bottom">&copy; 2025 CPR Heroes | All rights reserved.</div>
+		  </footer>
+
+		  <script>
+			// Close popup function
+			function closePopup() {
+			  document.getElementById('welcomePopup').style.display = 'none';
+			}
+
+			// Confetti: simple effect, generate 15 confetti dots randomly falling
+			const colors = ['#e74c3c', '#c0392b', '#f1948a', '#a93226', '#f5b7b1'];
+
+			function createConfetti() {
+			  for (let i = 0; i < 15; i++) {
+				const confetti = document.createElement('div');
+				confetti.classList.add('confetti');
+				confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+				confetti.style.left = Math.random() * window.innerWidth + 'px';
+				confetti.style.animationDelay = (Math.random() * 3) + 's';
+				confetti.style.width = confetti.style.height = (5 + Math.random() * 8) + 'px';
+				document.body.appendChild(confetti);
+				// Remove after animation (3s) to keep DOM clean
+				setTimeout(() => confetti.remove(), 4000);
+			  }
+			}
+
+			// Generate confetti every 6 seconds
+			setInterval(createConfetti, 6000);
+
+			// Initial confetti burst
+			createConfetti();
+		  </script>
+	</body>
+</html>
+
+

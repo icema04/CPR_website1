@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPR Medical Aid - Q&A</title>
+<style>
+  /* Reset & Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 960px;
+    margin: auto;
+  }
+
+  /* Header Styling */
+  header {
+    background-color: #790000;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid #4d0000;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+
+  /* Q&A Section */
+  .qna-section, .quiz-section {
+    background: #fff;
+    margin-top: 2rem;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+
+  .qna-section:hover, .quiz-section:hover {
+    transform: translateY(-3px);
+  }
+
+  .qna-section h2, .quiz-section h2 {
+    color: #790000;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .qna-item {
+    margin-bottom: 1.2rem;
+  }
+
+  .qna-item h3 {
+    color: #4d0000;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  .qna-item p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Quiz Section */
+  .quiz-section p {
+    margin-bottom: 1rem;
+  }
+
+  .quiz-link {
+    display: inline-block;
+    background: #790000;
+    color: #fff;
+    padding: 0.7rem 1.3rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+  }
+
+  .quiz-link:hover {
+    background: #4d0000;
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  footer {
+    background: #4d0000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.7rem;
+    }
+
+    .qna-section h2, .quiz-section h2 {
+      font-size: 1.3rem;
+    }
+
+    .quiz-link {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>CPR Medical Aid</h1>
+      <p>Empowering you with CPR knowledge & care</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="qna-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="qna-item">
+        <h3>What is CPR?</h3>
+        <p>CPR, or Cardiopulmonary Resuscitation, is a vital technique that keeps blood and oxygen flowing when someone’s heart has stopped or they’ve stopped breathing. It’s a crucial skill that saves lives!</p>
+      </div>
+
+      <div class="qna-item">
+        <h3>When should CPR be performed?</h3>
+        <p>If you see someone who’s unresponsive and not breathing normally, or only gasping, start CPR right away. Every second counts!</p>
+      </div>
+
+      <div class="qna-item">
+        <h3>How can I learn CPR?</h3>
+        <p>Get trained through certified courses by organizations like the American Heart Association or the Red Cross. Or explore online resources and practice with an instructor—it’s easier than you think and can truly save lives.</p>
+      </div>
+    </section>
+
+    <section class="quiz-section">
+      <h2>Test Your CPR Knowledge</h2>
+      <p>Ready to put your knowledge to the test? Take our interactive quiz below and see how much you know!</p>
+      <a href="https://kahoot.it/challenge/?quiz-id=18478438-b793-4e90-841a-cdcf32bce148&single-player=true" target="_blank" class="quiz-link">Take the Kahoot Quiz</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 CPR Medical Aid. We’re here to help you save lives.</p>
+    </div>
+  </footer>
+</body>
+</html>

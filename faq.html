@@ -1,0 +1,304 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: url('images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ddd;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-left a {
+      font-size: 20px;
+      color: red;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .navbar-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar-right a {
+      color: white;
+      background-color: red;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .navbar-right a:hover {
+      background-color: #cc0000;
+    }
+
+   .faq-title {
+	  text-align: center;
+	  font-family: 'Quicksand', sans-serif;
+	  font-size: 36px;
+	  font-weight: 700;
+	  margin-top: 60px;
+	  color: red; /* merah pekat */
+	  text-shadow:
+		2px 2px 8px rgba(0, 0, 0, 0.7),
+		0px 0px 5px rgba(0, 0, 0, 0.5); /* bayang lebih gelap & tebal */
+	}
+
+
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 30px 20px;
+    }
+
+    .faq-section, .form-section {
+      width: 45%;
+      min-width: 300px;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .faq-item {
+      background-color: #f0f4f3;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .faq-item:hover {
+      background-color: #e0ecea;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-question {
+      font-weight: bold;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #f57c00;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border: 2px solid #f57c00;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-align: center;
+    }
+
+    #popup p {
+      font-weight: bold;
+      color: #1c2b2d;
+    }
+
+    #popup button {
+      margin-top: 10px;
+      padding: 8px 20px;
+      background-color: #f57c00;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .faq-section, .form-section {
+        width: 90%;
+      }
+    }
+ 
+	footer {
+		background: #ffe6e6;
+		color: #444;
+		text-align: center;
+		padding: 1.5rem 1rem;
+		margin-top: 3rem;
+		font-size: 0.9rem;
+		border-top: 2px solid #ccc;
+	 }
+	 
+	</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+		  <div class="navbar">
+			<div class="navbar-left">
+			  <a href="index.html" tabindex="1">Home</a></div>
+			<div class="navbar-right">
+			  <a href="aboutus.html" tabindex="2">About Us</a>
+			  <a href="aboutcpr.html" tabindex="3">About CPR</a>
+			  <a href="kahoot.html" tabindex="4">Knowledge Test</a>
+			  <a href="faq.html" tabindex="5">FAQ</a>
+			  <a href="contact.html" tabindex="6">Contact Us</a>
+			</div>
+		  </div>
+
+  <!-- FAQ Title -->
+  <h1 class="faq-title">Frequently Asked Questions</h1>
+
+  <!-- Content Wrapper -->
+  <div class="content-wrapper">
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question">What is CPR?</div>
+        <div class="faq-answer">CPR (Cardiopulmonary Resuscitation) is an emergency procedure that combines chest compressions with rescue breaths to help restore blood circulation and breathing in someone whose heart has stopped.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">When should I perform CPR?</div>
+        <div class="faq-answer">CPR should be performed when a person is unresponsive and not breathing or only gasping. Always call emergency services first before starting CPR.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can CPR save lives?</div>
+        <div class="faq-answer">Yes, CPR can significantly increase the chance of survival in cardiac arrest cases if performed immediately and effectively.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need formal training to do CPR?</div>
+        <div class="faq-answer">While training is highly recommended, untrained individuals can still perform hands-only CPR (chest compressions only) in emergencies until help arrives.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is hands-only CPR?</div>
+        <div class="faq-answer">Hands-only CPR involves chest compressions without mouth-to-mouth breaths and is recommended for use by bystanders who are not trained in CPR.</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Ask a different question</h2>
+      <form id="questionForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+    <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 CPR Heroes | Be Prepared. Be a Hero. 🦸‍♂️</p>
+    </div>
+  </footer>
+
+  <!-- Popup -->
+  <div id="popup">
+    <p>✅ Your message has been sent!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <script>
+    // Toggle FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // Handle form submission
+    const form = document.getElementById('questionForm');
+    const popup = document.getElementById('popup');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      popup.style.display = 'block';
+      form.reset();
+    });
+
+    function closePopup() {
+      popup.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
+
+
